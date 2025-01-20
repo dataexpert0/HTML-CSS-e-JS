@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const inquirer = require('inquirer');
 const Task = require('./taskModel');
 
-mongoose.connect('mongodb+srv://gustavom1283:qgdWwwhqI9xHkqAx@cluster0.phlto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://gustavom1283:PRIVATE@cluster0.phlto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   }).then(() => {
     console.log("Conectado ao MongoDB!");
     mainMenu();
