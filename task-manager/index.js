@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const inquirer = require('inquirer');
 const Task = require('./taskModel');
 
-mongoose.connect('mongodb+srv://gustavom1283:PRIVATE@cluster0.phlto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+mongoose.connect('mongodb+srv://PRIVATE:PRIVATE@cluster0.phlto.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   }).then(() => {
     console.log("Conectado ao MongoDB!");
     mainMenu();
@@ -10,7 +10,6 @@ mongoose.connect('mongodb+srv://gustavom1283:PRIVATE@cluster0.phlto.mongodb.net/
     console.error("Erro ao conectar ao MongoDB:", error);
   });
   
-  // Função para exibir o menu principal
   async function mainMenu() {
     const { action } = await inquirer.prompt([
       {
@@ -37,7 +36,6 @@ mongoose.connect('mongodb+srv://gustavom1283:PRIVATE@cluster0.phlto.mongodb.net/
     }
   }
   
-  // Função para adicionar uma tarefa
   async function addTask() {
     const { title, description } = await inquirer.prompt([
       { type: 'input', name: 'title', message: 'Título da tarefa:' },
@@ -49,7 +47,6 @@ mongoose.connect('mongodb+srv://gustavom1283:PRIVATE@cluster0.phlto.mongodb.net/
     mainMenu();
   }
   
-  // Função para listar todas as tarefas
   async function listTasks() {
     const tasks = await Task.find();
     console.log("\n--- Tarefas ---");
@@ -61,7 +58,6 @@ mongoose.connect('mongodb+srv://gustavom1283:PRIVATE@cluster0.phlto.mongodb.net/
     mainMenu();
   }
   
-  // Função para atualizar uma tarefa
   async function updateTask() {
     const tasks = await Task.find();
     if (tasks.length === 0) {
@@ -87,7 +83,6 @@ mongoose.connect('mongodb+srv://gustavom1283:PRIVATE@cluster0.phlto.mongodb.net/
     mainMenu();
   }
   
-  // Função para remover uma tarefa
   async function removeTask() {
     const tasks = await Task.find();
     if (tasks.length === 0) {
