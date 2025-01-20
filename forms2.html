@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+       <title> Javascript </title>
+       <meta charset = "UTF-8" />
+
+       <style>
+        h1
+        {
+            color: green; 
+        }
+       </style>
+
+       <script> 
+
+        function somar()
+        {
+            const a = document.getElementById('n1').value
+            const b = document.getElementById('n2').value
+            const resultado = document.getElementById('resultado')
+            soma = Number(a) + Number(b)
+
+            resultado.innerHTML = "A soma dos números é " + Number(soma)
+
+            console.log("A soma é " + Number(soma))
+        }
+       </script>
+    </head>
+    
+    <body>
+        <form action = "">
+           
+            N1: <input type = "text" id = "n1"/> <br> 
+            N2: <input type = "text" id = "n2" /> <br> 
+
+            <input type = "button" value = "Somar" onclick = "somar()"/> 
+
+            <h1 id = "resultado"> O resultado é: </h1>
+        </form>
+    </body>
+</html>
